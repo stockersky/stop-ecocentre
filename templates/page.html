@@ -9,13 +9,18 @@
   style="background-image: url('ecocentre2.webp');">
   <div
     class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
-    style="background-color: rgba(35, 32, 32, 0.6)">
+    style="background-color: rgba(22, 20, 20, 0.6)">
     <div class="flex h-full items-center justify-center ">
-      <div class="shrink-0 max-w-4xl ">
-        <div class="text-neutral-50/90 shrink-0 max-w-4xl ">
-          <h2 class="mb-4 text-4xl font-['Raleway']">{{ this.title }}</h2>
-          <h4 class="mb-6 text-2xl text-justify font-['Raleway']">{{ this.body }}</h4>
-          <h4 class="mb-6 text-xl">{{ this.thing }}</h4>
+      <div class="shrink-0 max-w-4xl mx-5 px-5">
+        <div class="text-white/90 subpixel-antialiased">
+          <h2 class="mb-4 text-7xl font-['Raleway']">{{ this.title }}</h2>
+          <div class="flex justify-center items-center">
+            <div class="max-w-64">
+              {{ this.thing }}
+            </div>
+          </div>
+          <h4 class="mb-6 text-3xl text-justify font-['Raleway']">{{ this.body }}</h4>
+          
           <button
             type="button"
             class="rounded border-2 border-neutral-50 px-7 pb-[8px] pt-[10px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
@@ -28,6 +33,7 @@
     </div>
   </div>
 </div>
+
 <div class="bg-[url(https://placekitten.com/600)] h-[600px] w-[600px] relative">
   <div class="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
     <h1 class="text-white font-semibold text-4xl"> Kittens are cute </h1>
