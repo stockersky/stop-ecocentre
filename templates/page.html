@@ -3,7 +3,7 @@
 {% block title %}{{ this.title }}{% endblock %}
 
 {% block body %}
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<!-- <nav class="bg-white border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
@@ -35,12 +35,13 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 
-<section class="bg-center bg-no-repeat bg-[url('ecocentre2.webp')] bg-gray-700 bg-blend-multiply">
-  <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">{{ this.title }}</h1>
-      <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">{{ this.body }}</p>
+<section class="bg-center bg-no-repeat bg-[url('ecocentre2.webp')] bg-gray-600 bg-blend-multiply">
+  <div class="px-4 mx-auto shrink-0 max-w-4xl py-10 lg:py-20">
+    <div class="text-white/90 subpixel-antialiased">
+      <h1 class="mb-4 text-center font-['Raleway'] font-extrabold tracking-tight leading-none text-4xl md:text-6xl lg:text-7xl">{{ this.title }}</h1>
+      <h2 class="my-6 text-justify font-['Raleway'] text-xl leading-relaxed lg:text-2xl lg:leading-relaxed">{{ this.body }}</h2>
       <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
           <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
               Get started
@@ -52,6 +53,7 @@
               Learn more
           </a>  
       </div>
+    </div>
   </div>
 </section>
 
@@ -67,7 +69,7 @@
             </div>
           </div>
           <h4 class="my-6 text-2xl text-justify font-['Raleway'] leading-relaxed">{{ this.body }}</h4>
-          
+
           <button
             type="button"
             class="rounded border-2 border-neutral-50 px-7 pb-[8px] pt-[10px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
@@ -90,5 +92,5 @@
     </p>
   </div>
 </div>
-</div>
+
 {% endblock %}
