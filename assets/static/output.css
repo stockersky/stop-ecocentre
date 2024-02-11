@@ -1571,6 +1571,16 @@ input:checked + .toggle-bg {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-slate-950 {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 6 23 / var(--tw-border-opacity));
+}
+
+.border-zinc-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(113 113 122 / var(--tw-border-opacity));
+}
+
 .bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -1622,6 +1632,16 @@ input:checked + .toggle-bg {
 .bg-indigo-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(180 198 252 / var(--tw-bg-opacity));
+}
+
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'ecocentre2\.webp\'\)\] {
@@ -1799,6 +1819,10 @@ input:checked + .toggle-bg {
   line-height: 1.25;
 }
 
+.leading-loose {
+  line-height: 2;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -1835,6 +1859,10 @@ input:checked + .toggle-bg {
 
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
+}
+
+.text-black\/90 {
+  color: rgb(0 0 0 / 0.9);
 }
 
 .subpixel-antialiased {
