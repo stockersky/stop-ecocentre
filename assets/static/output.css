@@ -1757,6 +1757,30 @@ input:checked + .toggle-bg {
   font-family: 'Raleway';
 }
 
+.font-\[\'lato\'\] {
+  font-family: 'lato';
+}
+
+.font-\[\'Protest\+Guerrilla\'\] {
+  font-family: 'Protest+Guerrilla';
+}
+
+.font-\[\'Sixtyfour\'\] {
+  font-family: 'Sixtyfour';
+}
+
+.font-\[\'Lato\'\] {
+  font-family: 'Lato';
+}
+
+.font-\[\'roboto\'\] {
+  font-family: 'roboto';
+}
+
+.font-\[\'Railway\'\] {
+  font-family: 'Railway';
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
