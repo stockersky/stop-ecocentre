@@ -1,42 +1,33 @@
 title: Stop à l'écocentre de l'île de Nantes
 ---
-body:
-<div>
-    <div class="font-extrabold">Les habitants contre l'écocentre de l'île de Nantes !</div> 
-    Nantes Métropole a décidé de contruire un "écocentre" de près de 3 hectares directement sous nos fenêtres.
-    Aucune information, aucune concertation, aucune étude publique sérieuse.
-    Pas d'inquiétude : ce projet est temporaire pour... 12 ans !
-    Cet écocentre est en fait une installation industrielle de dépollution des gravats extraits des chantiers de l'Ile de Nantes.
-</div>
-<div>
-    Cette installation industrielle produira énormément de nuisances : 
-    <ul role="list" class="space-y-2">
-        <li class="flex items-center">
-            <svg class="flex-shrink-0 w-4 h-4 text-red-700 dark:text-red-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
-            <path d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"/>
-            </svg>
-            <span class="leading-tight ms-3">émission de particules dangereuses pour la santé</span>
-        </li>
-        <li class="flex items-center">
-            <svg class="flex-shrink-0 w-4 h-4 text-red-700 dark:text-red-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
-            <path d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"/>
-            </svg>
-        <span class="leading-tight ms-3">nuisances sonores (concassage, criblage de gravats)</span>
-        </li>
-        <li class="flex items-center">
-            <svg class="flex-shrink-0 w-4 h-4 text-red-700 dark:text-red-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
-            <path d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"/>
-            </svg>
-            <span class="ms-3">destruction du paysage</span>
-        </li>
-    </ul>
 
-    <div class="font-extrabold">Cette installation industrielle polluante n'a pas sa place au milieu d'un des quartiers les plus densément peuplés de la métropole de Nantes !</div>
-</div>
+intro1:
 
+**Les habitants contre l'écocentre de l'île de Nantes !**
+Nantes Métropole a décidé de contruire un "écocentre" de près de 3 hectares directement sous nos fenêtres.
+Aucune information, aucune concertation, aucune étude publique sérieuse.
+Pas d'inquiétude : ce projet est temporaire pour... 12 ans !
+Cet écocentre est en fait une installation industrielle de dépollution des gravats extraits des chantiers de l'Ile de Nantes.
+---
 
+intro2:
+
+Cette installation industrielle produira énormément de nuisances :  
 
 ---
+
+nuisance1: émission de particules dangereuses pour la santé  
+---
+nuisance2: nuisances sonores (concassage, criblage de gravats)  
+---
+nuisance3: destruction du paysage 
+---
+
+intro3:
+**Cette installation industrielle polluante n'a pas sa place au milieu d'un des quartiers les plus densément peuplés de la métropole de Nantes !**
+
+---
+
 thing:
 
 ![Texte alternatif](stop-ecocentre-logo.jpg)
