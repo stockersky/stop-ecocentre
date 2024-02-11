@@ -30,6 +30,13 @@
         class="text-center font-['Raleway'] font-extrabold tracking-tight leading-none text-4xl md:text-6xl lg:text-7xl my-2 lg:my-6">
         {{ this.title }}
       </h1>
+
+      <div class="flex justify-center items-center py-5">
+        <div class="max-w-48">
+          {{ this.ecocentre_logo }}
+        </div>
+      </div>
+
       <div class="grid lg:grid-cols-2 gap-8 text-justify md:grid-cols-1 font-['Raleway'] leading-relaxed text-base md:text-lg lg:text-xl my-2 lg:my-6">
         <div>
           {{ this.intro1 }}
@@ -79,12 +86,14 @@
     </div>
   </div>
 
-  <div class="flex justify-center items-center py-5">
-    <div class="max-w-48">
-      {{ this.thing }}
+</section>
+
+<section class="bg-center bg-cover bg-no-repeat bg-gray-600 bg-blend-multiply">
+  <div class="px-4 mx-auto shrink-0 max-w-screen-xl py-2 lg:py-6">
+    <div class="text-white/90 subpixel-antialiased text-base md:text-lg lg:text-xl my-2 lg:my-6">
+      {{ this.content1 }}
     </div>
   </div>
-
 </section>
 
 {% endblock %}
