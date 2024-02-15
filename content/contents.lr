@@ -33,8 +33,7 @@ contribute:
 https://tribee.fr/cagnotte/01HGB2M41MX9565Z5CK1XHEJGW/participation
 ---
 
-ecocentre_logo:
-![stop-ecocentre logo](stop-ecocentre-logo.jpg)
+ecocentre_logo: stop-ecocentre-logo.jpg
 ---
 
 content1:
@@ -60,6 +59,11 @@ Bien entendu, nous sommes tous d'accord pour promouvoir le recyclage et le ré-e
 mais pas à proximité des habitations, sans concertation, sans études des conséquences pour notre santé !
 ---
 
-aerial_view:
-![stop-ecocentre logo](ecocentre.webp)
+image_ecocentre: ecocentre.webp
+---
+image_brezillon1: Brezillon1.webp
+---
+image_brezillon2: Brezillon2.webp
+---
+image_brezillon3: Brezillon3.webp
 ---

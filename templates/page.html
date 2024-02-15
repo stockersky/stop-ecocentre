@@ -33,7 +33,7 @@
 
       <div class="flex justify-center items-center py-5">
         <div class="max-w-48">
-          {{ this.ecocentre_logo }}
+          <img class="object-cover rounded-lg" src="{{ this.ecocentre_logo }}" alt="">
         </div>
       </div>
 
@@ -91,17 +91,16 @@
       </div>
       <div class="my-2 lg:my-6">
         <div class="flex justify-center">
-          <img class="object-cover rounded-lg"  src="ecocentre.webp">
+          <img class="object-cover rounded-lg"  src="{{ this.image_ecocentre }}">
         </div>
       </div>
       <div class="my-2 lg:my-6 leading-relaxed">
         {{ this.content2 }}
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img class="object-cover h-80 rounded-lg" src="Brezillon1.webp" alt="">
-        <img class="object-cover h-80 rounded-lg" src="Brezillon2.webp" alt="">
-        <img class="object-cover h-80 rounded-lg" src="Brezillon4.webp" alt="">
-
+        <img class="object-cover h-80 rounded-lg" src="{{ this.image_brezillon1 }}" alt="">
+        <img class="object-cover h-80 rounded-lg" src="{{ this.image_brezillon2 }}" alt="">
+        <img class="object-cover h-80 rounded-lg" src="{{ this.image_brezillon3 }}" alt="">
       </div>
     </div>
   </div>
