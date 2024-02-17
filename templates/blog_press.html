@@ -14,20 +14,36 @@
   </div>
 </section>
 
-<section>
-  <ul class="blog-index">
-  {% for post in this.pagination.items %}
-    <li>
-      <a href="{{ post|url }}">{{ post.title }}</a> —
-      by {{ post.media }}
-      on {{ post.pub_date|dateformat }}
-    </li>
-  {% endfor %}
-  </ul>
+<section class="bg-center bg-cover bg-no-repeat bg-gray-200 bg-blend-multiply">
+  <div class="px-4 mx-auto shrink-0 max-w-screen-xl py-2 lg:py-6">
+    <div class="grid grid-cols-2 gap-4">
+    {% for post in this.pagination.items %}
+      
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-5">
+            <a href="{{ post.media_url }}" target="_blank" rel="noopener noreferrer">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ post.title }}</h5>
+            </a>
+            <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              <ul>
+                <li>Media : {{ post.media }}</li>
+                <li>Date : {{ post.pub_date|dateformat }}</li>
+              </ul>
+            </div>  
+        </div>
+        <a href="{{ post.media_url }}" target="_blank" rel="noopener noreferrer">
+          <img class="rounded-b-lg" src="{{ post.path }}/{{ post.media_image }}" alt="" />
+        </a>
+      </div>
 
-  {% if this.pagination.pages > 1 %}
-    {{ render_pagination(this.pagination) }}
-  {% endif %}
+    {% endfor %}
+    </div>
+    {% if this.pagination.pages > 1 %}
+      {{ render_pagination(this.pagination) }}
+    {% endif %}
+
+  </div>
+
 </section>
 
 {% endblock %}
