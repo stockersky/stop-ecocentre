@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% from "macros/pagination.html" import render_pagination %}
-{% block title %}My Blog{% endblock %}
+{% block title %}{{ this.title }}{% endblock %}
 {% block body %}
-  <h1>My Blog</h1>
+  <h1>{{ this.title }}</h1>
 
   <ul class="blog-index">
   {% for post in this.pagination.items %}
