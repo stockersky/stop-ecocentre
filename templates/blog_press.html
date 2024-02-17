@@ -15,14 +15,14 @@
 </section>
 
 <section class="bg-center bg-cover bg-no-repeat bg-gray-200 bg-blend-multiply">
-  <div class="px-4 mx-auto shrink-0 max-w-screen-xl py-2 lg:py-6">
+  <div class="px-4 mx-auto shrink-0 max-w-4xl py-5 lg:py-10 font-['Lato']">
     <div class="grid grid-cols-2 gap-4">
     {% for post in this.pagination.items %}
       
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-600 flex flex-col justify-between">
         <div class="p-5">
             <a href="{{ post.media_url }}" target="_blank" rel="noopener noreferrer">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ post.title }}</h5>
+                <h5 class="mb-2 text-lg md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ post.title }}</h5>
             </a>
             <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
               <ul>
@@ -32,7 +32,7 @@
             </div>  
         </div>
         <a href="{{ post.media_url }}" target="_blank" rel="noopener noreferrer">
-          <img class="rounded-b-lg" src="{{ post.path }}/{{ post.media_image }}" alt="" />
+          <img class="object-fill w-full max-h-60 rounded-b-lg" src="{{ post.path }}/{{ post.media_image }}" alt="" />
         </a>
       </div>
 
