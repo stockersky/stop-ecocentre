@@ -8,15 +8,15 @@
       <h1
         class="mb-4 text-center font-['Raleway'] font-extrabold tracking-tight leading-none text-4xl md:text-6xl lg:text-7xl">
         {{ this.title }}</h1>
-      <h2 class="my-6 text-justify font-['Lato'] text-xl leading-relaxed lg:text-2xl lg:leading-relaxed">{{
-        this.subheading }}</h2>
+      <h2 class="my-6 text-justify font-['Lato'] text-xl leading-relaxed lg:text-2xl lg:leading-relaxed">
+        {{ this.subheading }}</h2>
     </div>
   </div>
 </section>
 
 <section class="bg-center bg-cover bg-no-repeat bg-gray-200 bg-blend-multiply">
-  <div class="px-4 mx-auto shrink-0 max-w-screen-xl py-2 lg:py-6 font-['Lato']">
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+  <div class="px-4 mx-auto shrink-0 max-w-md md:max-w-4xl py-10 lg:py-10 font-['Lato']">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {% for post in this.pagination.items %}
       
       <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-600 flex flex-col justify-between">
