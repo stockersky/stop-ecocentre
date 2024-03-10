@@ -17,21 +17,18 @@
 </section>
 
 <section class="bg-center bg-cover bg-no-repeat bg-gray-200 font-['lato']">
-  <div class="px-4 mx-auto shrink-0 max-w-4xl py-1 lg:py-3">
+  <div class="px-4 mx-auto shrink-0 max-w-4xl py-5">
 
     <div class="grid grid-cols-1 gap-4">
 
     {% for id, item in bag('ecocentre_history').items() %}
     
-      <div class="flex justify-center">
-        <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ item.date }}</h5>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ item.event }}</p>
-          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ item.link }}</a>
-        </div>
+      <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ item.date }}</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ item.event }}</p>
+        <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ item.link }}</a>
       </div>
 
-      
       {% endfor %}
 
     </div>
