@@ -3,3 +3,6 @@ build
 *.pyc
 *.pyo
 *.egg-info
+
+credentials.json
+token.json
