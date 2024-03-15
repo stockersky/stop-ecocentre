@@ -21,13 +21,21 @@
     <div class="subpixel-antialiased font-['lato']">
       <div class="my-6 text-justify text-base leading-relaxed">{{ get_blogger_articles_fuck }}</div>
       <div>
+        Nombre d'articles de blog: {{get_blogger_articles|length}}
         {% for blog in get_blogger_articles %}
-        <div>{{ blog.title|safe }}</div>
-        <div>{{ blog.content|safe }}</div>
+        <div>{{ blog.title }}</div>
+        <div>{{ blog.published.strftime('%d %b %Y') }}</div>
+        <div>{{ blog.content }}</div>
         {% endfor %}
       </div>
     </div>
   </div>
 </section>
+{{ get_blogger_date_rebuild }}
+{% set id = get_random_id() %}
+<div id="{{ id }}">
+  {{id}}
+</div>
+
 
 {% endblock %}

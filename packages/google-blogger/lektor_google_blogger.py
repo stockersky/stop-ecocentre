@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 from lektor.pluginsystem import Plugin
+from lektor.context import get_ctx
 
 import os.path
 import os
+import datetime
+import re
+
+from dataclasses import dataclass
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -15,6 +20,35 @@ from markupsafe import Markup, escape
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ["https://www.googleapis.com/auth/blogger"]
+
+@dataclass
+class Publication:
+    title: str
+    content: str
+    published: datetime.datetime
+    
+    @staticmethod
+    def from_entry(post):
+        return Publication(
+            title=safe_html(post['title']),
+            content=safe_html(post['content']),
+            published=Publication.get_date(post['published'])
+        )
+
+    @staticmethod
+    def get_date(date_string):
+        # Google Blogger date string has a wrong format
+        # 2024-03-13T16:53:00-07:00 should be : 2024-03-13T16:53:00-0700
+        standard_string = re.sub(r"-(\d+):(\d+)$", r"-\1\2", date_string)
+        pub_date = datetime.datetime.strptime(standard_string, '%Y-%m-%dT%H:%M:%S%z')
+        ic(pub_date)
+        return pub_date
+
+def volatile():
+    """Set the dirty flag on the artifact currently being built."""
+    ctx = get_ctx()
+    ic(f"ctx --> {ctx}")
+    ctx.artifact.set_dirty_flag()
 
 def get_blogger_articles_test():
     return "Hello from Lektor Google Blogger !!!"
@@ -67,11 +101,12 @@ def get_blogger_articles(blog_id):
         # ic(post)
         print(post['title'])
         print(post['published'])
+        print(f"published type : {type(post['published'])}")
         # print(f">>> {get_image_link(post['content'])}")
         print(f"{safe_html(post['content'])}")
         print("-----------------")
 
-    return posts
+    return [Publication.from_entry(post) for post in posts]
 
 
 class GoogleBloggerPlugin(Plugin):
@@ -88,5 +123,8 @@ class GoogleBloggerPlugin(Plugin):
         blog_id = config.get('blog.blog_id', None)
         self.env.jinja_env.globals.update(
             get_blogger_articles_test=get_blogger_articles_test(),
-            get_blogger_articles=get_blogger_articles(blog_id)
+            get_blogger_articles=get_blogger_articles(blog_id),
+            # volatile=volatile()
         )
+
+
