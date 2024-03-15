@@ -16,6 +16,9 @@
 
 <section class="bg-center bg-cover bg-no-repeat bg-gray-200 bg-blend-multiply">
   <div class="px-4 mx-auto shrink-0 max-w-md md:max-w-4xl py-10 lg:py-10 font-['Lato']">
+    {% if this.pagination.pages > 1 %}
+      {{ render_pagination(this.pagination) }}
+    {% endif %}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {% for post in this.pagination.items %}
       
@@ -38,9 +41,6 @@
 
     {% endfor %}
     </div>
-    {% if this.pagination.pages > 1 %}
-      {{ render_pagination(this.pagination) }}
-    {% endif %}
 
   </div>
 

@@ -11,7 +11,10 @@
 If plugin development ongoing :
 `export LEKTOR_DEV=1`
 
-`lektor serve`
+`lektor server`
+
+## build & publish
+`lektor build && lektor deploy`
 
 
 

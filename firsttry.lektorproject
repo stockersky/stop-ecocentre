@@ -1,2 +1,5 @@
 [project]
-name = firsttry
+name = stop-ecocentre
+
+[servers.ghpages]
+target = ghpages://stockersky/stockersky.github.io
