@@ -22,10 +22,21 @@
       <div class="my-6 text-justify text-base leading-relaxed">{{ get_blogger_articles_fuck }}</div>
       <div>
         Nombre d'articles de blog: {{get_blogger_articles|length}}
-        {% for blog in get_blogger_articles %}
-        <div>{{ blog.title }}</div>
-        <div>{{ blog.published.strftime('%d %b %Y') }}</div>
-        <div>{{ blog.content }}</div>
+
+        {% for blog in get_blogger_articles|sort(reverse=true, attribute="published") %}
+        <div class="my-5 border border-gray-700 rounded-lg shadow flex flex-col justify-between">
+          <div class="p-3 dark:bg-gray-800 dark:hover:bg-gray-600">
+            <h2 class="mb-2 text-lg md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">
+              {{ blog.title }}
+            </h2>
+            <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {{ blog.published.strftime('%d %b %Y') }}
+            </div>
+          </div>
+          <div class="p-3 bg-gray-200 mb-3 font-normal">
+            {{ blog.content }}
+          </div>
+        </div>
         {% endfor %}
       </div>
     </div>
