@@ -50,9 +50,6 @@ def volatile():
     ic(f"ctx --> {ctx}")
     ctx.artifact.set_dirty_flag()
 
-def get_blogger_articles_test():
-    return "Hello from Lektor Google Blogger !!!"
-
 def safe_html(html_doc):
      return Markup(html_doc)
 
@@ -122,9 +119,9 @@ class GoogleBloggerPlugin(Plugin):
         config = self.get_config()
         blog_id = config.get('blog.blog_id', None)
         self.env.jinja_env.globals.update(
-            get_blogger_articles_test=get_blogger_articles_test(),
             get_blogger_articles=get_blogger_articles(blog_id),
             # volatile=volatile()
+            get_blogger_updated = datetime.datetime.now()
         )
 
 
