@@ -6,6 +6,7 @@ import os.path
 import os
 import datetime
 import re
+import sys
 
 from dataclasses import dataclass
 
@@ -53,29 +54,35 @@ def volatile():
 def safe_html(html_doc):
      return Markup(html_doc)
 
-def get_blogger_articles(blog_id):
+def get_blogger_articles(blog_id, credentials_dir):
     """Shows basic usage of the People API.
     Prints the name of the first 10 connections.
     """
-
     print(f">>>>>>>>>>> {os.getcwd()}<<<<<<<<<<<<<<")
+    if not os.path.isdir(credentials_dir):
+        print(f"Directory {credentials_dir} does not exists. Exiting")
+        sys.exit(0)
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists("./packages/google-blogger/token.json"):
-        creds = Credentials.from_authorized_user_file("./packages/google-blogger/token.json", SCOPES)
+    if os.path.exists(f"{credentials_dir}/token.json"):
+        creds = Credentials.from_authorized_user_file(f"{credentials_dir}//token.json", SCOPES)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                "./packages/google-blogger/credentials.json", SCOPES
-            )
+            try:
+                flow = InstalledAppFlow.from_client_secrets_file(
+                    f"{credentials_dir}/credentials.json", SCOPES
+                )
+            except Exception as exc:
+                print(exc)
+                sys.exit(0)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
-        with open("./packages/google-blogger/token.json", "w") as token:
+        with open(f"{credentials_dir}/token.json", "w") as token:
             token.write(creds.to_json())
 
 
@@ -116,10 +123,13 @@ class GoogleBloggerPlugin(Plugin):
         context['test_function'] = test_function
 
     def on_setup_env(self, **extra):
+        # Read Lektor google-blogger plugin configuration file
         config = self.get_config()
         blog_id = config.get('blog.blog_id', None)
+        credentials_dir = config.get('blog.credentials_dir', None)
+        
         self.env.jinja_env.globals.update(
-            get_blogger_articles=get_blogger_articles(blog_id),
+            get_blogger_articles=get_blogger_articles(blog_id, credentials_dir),
             # volatile=volatile()
             get_blogger_updated = datetime.datetime.now()
         )
