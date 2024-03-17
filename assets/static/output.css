@@ -1468,6 +1468,12 @@ input:checked + .toggle-bg {
   overflow: hidden;
 }
 
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1839,6 +1845,10 @@ input:checked + .toggle-bg {
 
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .subpixel-antialiased {

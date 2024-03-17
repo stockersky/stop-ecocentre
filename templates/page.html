@@ -110,4 +110,38 @@
   </div>
 </section>
 
+<section class="bg-center bg-cover bg-no-repeat bg-gray-200 bg-blend-multiply">
+  <hr class="w-48 h-1 mx-auto bg-gray-100 border-0 rounded dark:bg-gray-700">
+  <div class="px-4 mx-auto shrink-0 max-w-screen-xl py-2 lg:py-6">
+    <h2 class="my-6 text-center font-['lato'] text-4xl">
+      Les dernières news !
+    </h2>
+    <div class="subpixel-antialiased font-['lato']">
+      <div>
+        <a href="{{ '/blog_news'|url }}" class="text-center text-2xl underline block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          Toutes les news sur le blog !
+        </a>
+
+        {% for blog in get_blogger_articles|sort(reverse=true, attribute="published") %}
+        {% if loop.index <= 2 %}
+        <div class="my-5 border border-gray-700 rounded-lg shadow flex flex-col justify-between">
+          <div class="p-3 dark:bg-gray-800 dark:hover:bg-gray-600">
+            <h2 class="mb-2 text-lg md:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">
+              {{ blog.title }}
+            </h2>
+            <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {{ blog.published.strftime('%d %b %Y') }}
+            </div>
+          </div>
+          <div class="p-3 bg-gray-200 mb-3 font-normal">
+            {{ blog.content }}
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+</section>
+
 {% endblock %}
