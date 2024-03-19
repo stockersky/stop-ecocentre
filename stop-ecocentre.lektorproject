@@ -1,5 +1,6 @@
 [project]
 name = stop-ecocentre
+url = https://www.stop-ecocentre.fr
 
 [servers.ghpages]
 target = ghpages://stockersky/stockersky.github.io?cname=www.stop-ecocentre.fr

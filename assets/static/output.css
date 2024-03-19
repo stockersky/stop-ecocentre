@@ -1254,6 +1254,18 @@ input:checked + .toggle-bg {
   height: 2.25rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-60 {
+  height: 15rem;
+}
+
+.h-40 {
+  height: 10rem;
+}
+
 .max-h-60 {
   max-height: 15rem;
 }
@@ -1304,6 +1316,10 @@ input:checked + .toggle-bg {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-sm {
+  max-width: 24rem;
 }
 
 .flex-1 {
@@ -1434,6 +1450,10 @@ input:checked + .toggle-bg {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2154,8 +2174,36 @@ input:checked + .toggle-bg {
     display: none;
   }
 
+  .md\:h-80 {
+    height: 20rem;
+  }
+
+  .md\:h-60 {
+    height: 15rem;
+  }
+
+  .md\:h-full {
+    height: 100%;
+  }
+
+  .md\:max-h-60 {
+    max-height: 15rem;
+  }
+
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-60 {
+    width: 15rem;
+  }
+
+  .md\:w-80 {
+    width: 20rem;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:max-w-4xl {
@@ -2184,6 +2232,14 @@ input:checked + .toggle-bg {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+
+  .md\:gap-3 {
+    gap: 0.75rem;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
