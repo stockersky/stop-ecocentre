@@ -1,0 +1,5 @@
+[project]
+name = stop-ecocentre
+
+[servers.ghpages]
+target = ghpages://stockersky/stockersky.github.io?cname=www.stop-ecocentre.fr

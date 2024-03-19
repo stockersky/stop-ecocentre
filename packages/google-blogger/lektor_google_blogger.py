@@ -91,7 +91,7 @@ def get_blogger_articles(blog_id, credentials_dir):
     print("Call the Blogger API")
     posts = []
     request = service.posts().list(
-        blogId=blog_id, maxResults=20)
+        blogId=blog_id, status="DRAFT", maxResults=20)
 
     while request is not None:
         response = request.execute()
