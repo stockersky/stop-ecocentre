@@ -20,7 +20,7 @@
   <div class="px-4 mx-auto shrink-0 max-w-4xl py-1 lg:py-3">
     <div class="subpixel-antialiased font-['lato']">
       <div>
-        Nombre d'articles de blog: {{get_blogger_articles|length}}
+        Nombre d'articles de blog : {{get_blogger_articles|length}}
 
         {% for blog in get_blogger_articles|sort(reverse=true, attribute="published") %}
         <div class="my-5 border border-gray-700 rounded-lg shadow flex flex-col justify-between">
