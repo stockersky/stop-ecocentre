@@ -21,7 +21,7 @@ jobs:
       
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.SuperSecret }}
+          SUPER_SECRET: ${{ secrets.THE_THINGS }}
         run: |
           echo "$SUPER_SECRET"
       
