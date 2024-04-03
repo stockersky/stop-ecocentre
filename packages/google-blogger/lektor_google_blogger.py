@@ -56,7 +56,7 @@ def safe_html(html_doc):
      return Markup(html_doc)
 
 def get_google_oauth2_credentials(credentials_dir):
-    if "GOOGLE_CREDS" in os.environ:
+    if "GOOGLE_TOKEN" in os.environ:
         ic("FROM env vars")
         google_token = json.loads(os.environ["GOOGLE_TOKEN"])
         creds = Credentials.from_authorized_user_info(google_token, SCOPES)
