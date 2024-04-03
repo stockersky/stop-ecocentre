@@ -21,9 +21,7 @@ jobs:
       
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.GOOGLE_TOKEN }}
+          GOOGLE_TOKEN: ${{ secrets.GOOGLE_TOKEN }}
         run: |
-          echo "$SUPER_SECRET"
-      
-      - name: Build lektor website
-        run: lektor build
+          lektor build
+
