@@ -7,6 +7,7 @@ import os
 import datetime
 import re
 import sys
+import json
 
 from dataclasses import dataclass
 
@@ -54,37 +55,48 @@ def volatile():
 def safe_html(html_doc):
      return Markup(html_doc)
 
-def get_blogger_articles(blog_id, credentials_dir):
-    """Shows basic usage of the People API.
-    Prints the name of the first 10 connections.
-    """
-    print(f">>>>>>>>>>> {os.getcwd()}<<<<<<<<<<<<<<")
-    if not os.path.isdir(credentials_dir):
-        print(f"Directory {credentials_dir} does not exists. Exiting")
-        sys.exit(0)
-    creds = None
-    # The file token.json stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first
-    # time.
-    if os.path.exists(f"{credentials_dir}/token.json"):
-        creds = Credentials.from_authorized_user_file(f"{credentials_dir}//token.json", SCOPES)
-    # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            try:
-                flow = InstalledAppFlow.from_client_secrets_file(
-                    f"{credentials_dir}/credentials.json", SCOPES
-                )
-            except Exception as exc:
-                print(exc)
-                sys.exit(0)
-            creds = flow.run_local_server(port=0)
-        # Save the credentials for the next run
-        with open(f"{credentials_dir}/token.json", "w") as token:
-            token.write(creds.to_json())
+def get_google_oauth2_credentials(credentials_dir):
+    if "GOOGLE_CREDS" in os.environ:
+        ic("FROM env vars")
+        google_token = json.loads(os.environ["GOOGLE_TOKEN"])
+        creds = Credentials.from_authorized_user_info(google_token, SCOPES)
+        return creds
+    else:
+        print(">>>> FROM FILE <<<<<<<<")
+        print(f">>>>>>>>>>> {os.getcwd()}<<<<<<<<<<<<<<")
+        if not os.path.isdir(credentials_dir):
+            print(f"Directory {credentials_dir} does not exists. Exiting")
+            sys.exit(0)
+        creds = None
+        # The file token.json stores the user's access and refresh tokens, and is
+        # created automatically when the authorization flow completes for the first
+        # time.
+        if os.path.exists(f"{credentials_dir}/token.json"):
+            creds = Credentials.from_authorized_user_file(f"{credentials_dir}//token.json", SCOPES)
+        # If there are no (valid) credentials available, let the user log in.
+        if not creds or not creds.valid:
+            if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+            else:
+                try:
+                    flow = InstalledAppFlow.from_client_secrets_file(
+                        f"{credentials_dir}/credentials.json", SCOPES
+                    )
+                except Exception as exc:
+                    print(exc)
+                    sys.exit(0)
+                creds = flow.run_local_server(port=0)
+            # Save the credentials for the next run
+            with open(f"{credentials_dir}/token.json", "w") as token:
+                token.write(creds.to_json())
+        return creds
+        
 
+
+def get_blogger_articles(blog_id, credentials_dir):
+    print(f">>>>>>>>>>> {os.getcwd()}<<<<<<<<<<<<<<")
+    
+    creds = get_google_oauth2_credentials(credentials_dir)
 
     service = build("blogger", "v3", credentials=creds)
 
@@ -115,7 +127,7 @@ def get_blogger_articles(blog_id, credentials_dir):
 
 class GoogleBloggerPlugin(Plugin):
     name = 'google-blogger'
-    description = u'Add your description here.'
+    description = u'A Lektor plugin to retrieve posts from Google Blogger.'
 
     def on_process_template_context(self, context, **extra):
         def test_function():
