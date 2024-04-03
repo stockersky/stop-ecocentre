@@ -22,6 +22,7 @@ jobs:
       - shell: bash
         env:
           GOOGLE_TOKEN: ${{ secrets.GOOGLE_TOKEN }}
+          BLOG_ID: ${{ secrets.BLOG_ID }}
         run: |
           lektor build
 
