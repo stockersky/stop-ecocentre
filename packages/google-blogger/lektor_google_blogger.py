@@ -137,8 +137,11 @@ class GoogleBloggerPlugin(Plugin):
     def on_setup_env(self, **extra):
         # Read Lektor google-blogger plugin configuration file
         config = self.get_config()
-        blog_id = config.get('blog.blog_id', None)
-        credentials_dir = config.get('blog.credentials_dir', None)
+        if "BLOG_ID" in os.environ:
+            blog_id = os.environ["BLOG_ID"]
+        else:
+            blog_id = config.get('blog.blog_id', None)
+            credentials_dir = config.get('blog.credentials_dir', None)
         
         self.env.jinja_env.globals.update(
             get_blogger_articles=get_blogger_articles(blog_id, credentials_dir),
