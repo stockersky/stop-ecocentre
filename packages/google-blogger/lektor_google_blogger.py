@@ -139,6 +139,7 @@ class GoogleBloggerPlugin(Plugin):
         config = self.get_config()
         if "BLOG_ID" in os.environ:
             blog_id = os.environ["BLOG_ID"]
+            credentials_dir = None
         else:
             blog_id = config.get('blog.blog_id', None)
             credentials_dir = config.get('blog.credentials_dir', None)
