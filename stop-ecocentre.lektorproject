@@ -3,4 +3,13 @@ name = stop-ecocentre
 url = https://www.stop-ecocentre.fr
 
 [servers.ghpages]
+enabled = yes
+name = Github pages on repo
 target = ghpages://stockersky/stockersky.github.io?cname=www.stop-ecocentre.fr
+default = yes
+
+[servers.ghpages-https]
+enabled = yes
+name = Github pages on repo
+target = ghpages+https://stockersky/stockersky.github.io?cname=www.stop-ecocentre.fr
+default = not
