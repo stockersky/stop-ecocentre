@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - "ghactions"
+  schedule:
+    - cron: "00 13 * * *"
 
 env:
   LEKTOR_OUTPUT_PATH: _html
