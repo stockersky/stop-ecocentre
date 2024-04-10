@@ -5,7 +5,7 @@ on:
     branches:
       - "ghactions"
   schedule:
-    - cron: "00 13 * * *"
+    - cron: "30 22 * * *"
 
 env:
   LEKTOR_OUTPUT_PATH: _html
