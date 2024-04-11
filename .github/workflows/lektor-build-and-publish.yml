@@ -1,9 +1,9 @@
 name: "Deploy site"
 
 on:
-  push:
-    branches:
-      - "ghactions"
+  # push:
+  #   branches:
+  #     - "ghactions"
   schedule:
     - cron: "30 22 * * *"
 
@@ -17,8 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: "ghactions"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
